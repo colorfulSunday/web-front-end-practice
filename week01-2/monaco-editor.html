@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+</head>
+<body>
+
+<div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
+<div>事例1，将图片文件内容写入img标签的src，使img显示选择图片文件的图片内容</div>
+<input id="file1" type="file" onchange="previewFile()"><br>
+<img src="" height="200" alt="Image preview...">
+
+<div>事例2，将本地文件中的代码读取到monaco-editor 中</div>
+<input id="file2" type="file" onchange="previewFile2()"><br>
+
+
+<div>事例3，将monaco-editor 里面的代码文本保存到本地文件中</div>
+<input type="button" onclick="saveContent()" value="保存代码到本地"><br>
+
+<script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+<script>
+    var editor;
+    require.config({ paths: { 'vs': '../node_modules/monaco-editor/min/vs' }});
+    require(['vs/editor/editor.main'], function() {
+        editor = monaco.editor.create(document.getElementById('container'), {
+            value: [
+                'function x() {',
+                '\tconsole.log("Hello world!");',
+                '}'
+            ].join('\n'),
+            language: 'javascript'
+        });
+    });
+</script>
+<script src="file-save.js"></script>
+</body>
+</html>

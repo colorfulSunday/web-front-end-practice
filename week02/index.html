@@ -13,13 +13,13 @@
     import Engine from "./js/engine.js";
     let tmpl = `<div class="newslist">
         <div class="img" v-if="info.showImage"><img src="{{image}}"/></div>
-        <div class="date" v-if="info.showDate">{{info.name}}</div>
-        <div class="img">{{info.name}}</div>
+        <div class="date" v-if="info.showDate">{{info.name1}}</div>
+        <div class="img">{{info.name2}}</div>
     </div>`;
     var engine = new Engine()
     var dom = engine.render(tmpl, {
         image: "some img", 
-        info: {showImage: true, showDate:false, name: "aaa"}
+        info: {showImage: true, showDate:true, name1: "aaa",name2:"bbb"}
     })
     document.body.appendChild(dom);
 

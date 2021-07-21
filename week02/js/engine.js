@@ -55,7 +55,7 @@ export default class Engine {
                     n.childrenTemplate,
                     null
                 );
-                pnode.children.push(newn);
+                pnode.children.unshift(newn);//调整子节点的顺序，要反过来
                 stack.push(newn);
             });
         }

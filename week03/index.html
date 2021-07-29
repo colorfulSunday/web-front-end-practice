@@ -31,8 +31,11 @@
     <div id="preview" class="item area">
         <iframe src="" frameborder="0"></iframe>
     </div>
+    <div id="test">
+        &lt;template&gt;&lt;divclass=\"app\"&gt;&lt;p&gt;{{str}}&lt;/p&gt;&lt;/div&gt;&lt;/template&gt;&lt;script&gt;exportdefault{data(){return{str:'succrss',}}}&lt;/script&gt;&lt;style&gt;&lt;/style&gt;
+    </div>
 </div>
-<div><input id="runner" type="button" value="运行"></div>
+<div><input id="runner-btn" type="button" value="运行"></div>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
 <script>
@@ -40,16 +43,12 @@
     require.config({ paths: { 'vs': '../node_modules/monaco-editor/min/vs' } });
     require(['vs/editor/editor.main'], function () {
         editor = monaco.editor.create(document.getElementById('editor'), {
-            value: [
-                'function x() {',
-                '\tconsole.log("Hello world!");',
-                '}'
-            ].join('\n'),
+            value: '',
             language: 'javascript'
         });
     });
 
-    var runner = document.getElementById('runner');
+    var runner = document.getElementById('runner-btn');
     runner.addEventListener("click", () => {
         let content = editor.getValue();
         $.post("http://127.0.0.1:8080/render.do", { content: content }, function (result) {

@@ -1,0 +1,33 @@
+{
+  "name": "web-front-end-practice",
+  "version": "1.0.0",
+  "description": "提交前端训练营的作业",
+  "main": "index.js",
+  "dependencies": {
+    "monaco-editor": "^0.26.1",
+    "webpack": "^5.47.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "vue": "^2.6.14",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.14",
+    "webpack-cli": "^4.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colorfulSunday/web-front-end-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colorfulSunday/web-front-end-practice/issues"
+  },
+  "homepage": "https://github.com/colorfulSunday/web-front-end-practice#readme"
+}
